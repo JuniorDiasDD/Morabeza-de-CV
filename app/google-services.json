@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1041421901452",
+    "project_id": "morabezacv-42003",
+    "storage_bucket": "morabezacv-42003.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041421901452:android:2d288593ffa571d11ae5a9",
+        "android_client_info": {
+          "package_name": "com.example.morabezacv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041421901452-nojl66af2g58qnj25pltkhrm89t7eik3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwyH1MoGzunO1K7WTZ-8axzC7uVB_jUdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041421901452-nojl66af2g58qnj25pltkhrm89t7eik3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

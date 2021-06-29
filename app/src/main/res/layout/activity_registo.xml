@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registo" android:background="@drawable/fundo">
+    android:background="@drawable/fundo">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:drawableLeft="@drawable/user"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:ems="15"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -39,6 +41,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:drawableLeft="@drawable/email"
         android:ems="15"
         android:hint="Email address"
@@ -48,44 +52,32 @@
         app:layout_constraintTop_toBottomOf="@+id/usernameR" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:drawableLeft="@drawable/password"
         android:ems="15"
         android:hint="Password"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailR" />
-
-    <EditText
-        android:id="@+id/password2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:drawableLeft="@drawable/password"
-        android:ems="15"
-        android:hint="Retype Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
         android:id="@+id/registarBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="60dp"
+        android:background="@color/colorPrimary"
         android:text="Register "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordL" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

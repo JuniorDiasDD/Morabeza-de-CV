@@ -8,33 +8,38 @@
     android:background="@drawable/fundo">
 
     <ImageView
-    android:id="@+id/imageView"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:scaleType="centerInside"
-    android:layout_marginTop="150dp"
-    app:srcCompat="@drawable/icon" />
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/icon" />
 
     <EditText
     android:id="@+id/email"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginLeft="40dp"
-    android:layout_marginTop="300dp"
+    android:layout_marginTop="320dp"
+
     android:drawableLeft="@drawable/user"
     android:ems="15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
     android:hint="Email Address"
     android:inputType="textEmailAddress" />
 
     <EditText
-    android:id="@+id/password"
+    android:id="@+id/passwordL"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginLeft="40dp"
-    android:layout_marginTop="350dp"
+    android:layout_marginTop="380dp"
+    android:textColor="@color/black"
     android:drawableLeft="@drawable/password"
     android:ems="15"
     android:hint="Password"
+    android:textColorHint="@color/black"
     android:inputType="textPassword" />
 
     <Button
@@ -43,7 +48,7 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="40dp"
         android:background="@color/colorPrimary"
-    android:layout_marginTop="450dp"
+    android:layout_marginTop="480dp"
     android:layout_marginRight="40dp"
     android:text="sign in" />
 
@@ -52,7 +57,7 @@
     android:layout_width="315dp"
     android:layout_height="wrap_content"
     android:layout_marginLeft="40dp"
-    android:layout_marginTop="520dp"
+    android:layout_marginTop="530dp"
     android:layout_marginRight="40dp"
         android:background="@color/transparente"
         android:textColor="@color/black"

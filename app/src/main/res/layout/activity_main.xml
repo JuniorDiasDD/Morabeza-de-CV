@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/fundo">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/icon" />
+
+    <EditText
+    android:id="@+id/email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="320dp"
+
+    android:drawableLeft="@drawable/user"
+    android:ems="15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+    android:hint="Email Address"
+    android:inputType="textEmailAddress" />
+
+    <EditText
+    android:id="@+id/passwordL"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="380dp"
+    android:textColor="@color/black"
+    android:drawableLeft="@drawable/password"
+    android:ems="15"
+    android:hint="Password"
+    android:textColorHint="@color/black"
+    android:inputType="textPassword" />
+
+    <Button
+    android:id="@+id/login"
+    android:layout_width="315dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+        android:background="@color/colorPrimary"
+    android:layout_marginTop="480dp"
+    android:layout_marginRight="40dp"
+    android:text="sign in" />
+
+    <Button
+    android:id="@+id/registar"
+    android:layout_width="315dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="530dp"
+    android:layout_marginRight="40dp"
+        android:background="@color/transparente"
+        android:textColor="@color/black"
+    android:text="Register Now" />
+
+
+</RelativeLayout>

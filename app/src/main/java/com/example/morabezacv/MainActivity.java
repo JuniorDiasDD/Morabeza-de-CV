@@ -79,10 +79,10 @@ public class MainActivity extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     dado = snapshot.getValue().toString();
                                     if(dado.equals("true")){
-                                        startActivity(new Intent(MainActivity.this,feeds.class));
 
                                     }
                                     Log.i("LOCAL",dado);
+                                    startActivity(new Intent(MainActivity.this,feeds.class));
                                 }
 
                                 @Override

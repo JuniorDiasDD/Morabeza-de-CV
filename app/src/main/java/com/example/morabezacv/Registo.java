@@ -61,7 +61,7 @@ public class Registo extends AppCompatActivity {
                             u.salvarDados();
                             startActivity(new Intent(Registo.this,feeds.class));
                         }else{
-                            Toast.makeText(Registo.this,"Erro ao criar um login. obs:Password min 7 caractere",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Registo.this,"Erro ao criar um login. obs:Password min 7 caractere ou conta existente",Toast.LENGTH_SHORT).show();
 
                         }
                          }

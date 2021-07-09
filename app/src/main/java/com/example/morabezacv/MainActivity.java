@@ -16,12 +16,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
@@ -33,13 +30,12 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Usuario u;
     private String dado;
-    private DatabaseReference mDatabase;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
         mAuth = FirebaseAuth.getInstance();
         etEmail = findViewById(R.id.email);
         etSenha = findViewById(R.id.passwordL);
@@ -55,21 +51,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // receberDados();
-              // logar();
-               // Intent feeds = new Intent(getApplicationContext(),feeds.class);
-             //   startActivity(feeds);
+                receberDados();
+                logar();
             }
         });
     }
 
 
     private void logar() {
-      /*  mAuth.signInWithEmailAndPassword(u.getEmail(), u.getSenha())
+        mAuth.signInWithEmailAndPassword(u.getEmail(), u.getSenha())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -84,10 +77,14 @@ public class MainActivity extends AppCompatActivity {
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     dado = snapshot.getValue().toString();
                                     if(dado.equals("true")){
-                                        startActivity(new Intent(MainActivity.this,feeds.class));
 
                                     }
                                     Log.i("LOCAL",dado);
+                                    Intent intent = new Intent(MainActivity.this,feeds.class);
+                                    intent.putExtra("idCliente",user.getUid());
+                                    startActivity(intent);
+
+
                                 }
 
                                 @Override
@@ -106,19 +103,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-
-
-       databaseReference.addChildEventListener(childEventListener);*/
-        // Get a reference to our posts
-
-// ...
-
-
-   }
+    }
 
     private void receberDados() {
-       /* u = new Usuario();
+        u = new Usuario();
         u.setEmail(etEmail.getText().toString());
-        u.setSenha(etSenha.getText().toString());*/
+        u.setSenha(etSenha.getText().toString());
     }
 }

@@ -3,6 +3,8 @@ package com.example.morabezacv;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +22,8 @@ public class Registo extends AppCompatActivity {
 
     private EditText etNome;
     private EditText etEmail;
-    private EditText etSenha;
-    private Button btCadastrar;
+    private EditText etSenha,morada,tel;
+    private Button btCadastrar,cancelar;
     private FirebaseAuth mAuth;
     private Usuario u;
 
@@ -33,16 +35,25 @@ public class Registo extends AppCompatActivity {
 
         etNome = findViewById(R.id.usernameR);
         etEmail = findViewById(R.id.emailR);
+        tel = findViewById(R.id.tel);
+        morada = findViewById(R.id.morada);
         etSenha = findViewById(R.id.passwordL);
         btCadastrar = findViewById(R.id.registarBtn);
+        cancelar=findViewById(R.id.cancelar);
         mAuth = FirebaseAuth.getInstance();
 
 
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
 
+            }
+        });
         btCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recuperarDados();
+              //  recuperarDados();
                 criarLogin();
             }
         });
@@ -51,37 +62,45 @@ public class Registo extends AppCompatActivity {
     }
 
     private void criarLogin() {
-        mAuth.createUserWithEmailAndPassword(u.getEmail(),u.getSenha())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            u.setId(user.getUid());
-                            u.salvarDados();
-                          //  startActivity(new Intent(Registo.this,feeds.class));
-                        }else{
-                            Toast.makeText(Registo.this,"Erro ao criar um login. obs:Password min 7 caractere",Toast.LENGTH_SHORT).show();
 
+        if (etNome.getText().length() == 0 || etEmail.getText().length() == 0 || etSenha.getText().length() == 0 || morada.getText().length() == 0 || tel.getText().length() == 0) {
+
+            new AlertDialog.Builder(this)
+                    .setTitle("Dados em Falta")
+                    .setMessage("Por Favor preencha todos os campos")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Continue with delete operation
                         }
-                         }
-
-                });
-        if (etNome.getText().toString() == "" || etEmail.getText().toString() == "" || etSenha.getText().toString() == "") {
-            Toast.makeText(this, "Você deve preencher todos os dados", Toast.LENGTH_LONG);
-        }
-    }
-
-
-
-    private void recuperarDados() {
-        if (etNome.getText().toString() == "" || etEmail.getText().toString() == "" || etSenha.getText().toString() == "") {
-            Toast.makeText(this, "Você deve preencher todos os dados", Toast.LENGTH_LONG);
-        } else {
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }else{
             u = new Usuario();
             u.setNome(etNome.getText().toString());
             u.setEmail(etEmail.getText().toString());
             u.setSenha(etSenha.getText().toString());
+            u.setTel(tel.getText().toString());
+            u.setMorada(morada.getText().toString());
 
+            mAuth.createUserWithEmailAndPassword(u.getEmail(),u.getSenha())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                u.setId(user.getUid());
+                                u.salvarDados();
+                                Intent intent = new Intent(Registo.this,feeds.class);
+                                intent.putExtra("idCliente",user.getUid());
+                                startActivity(intent);
+                            }else{
+                                Toast.makeText(Registo.this,"Erro ao criar um login. obs:Password min 7 caractere ou conta existente",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                    });
         }
-    }}
+    }
+}

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Perfil">
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="start">
+
+            <Button
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:background="@drawable/voltar"
+                android:id="@+id/voltar"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+    <ImageView
+        android:layout_height="150dp"
+        android:layout_width="150dp"
+        android:background="@drawable/persone"
+        android:id="@+id/imageView"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="50dp">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:text="Nome: "
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginRight="8dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/nome"
+        android:text="-----"
+        android:layout_weight="1"
+        android:textSize="18dp"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="50dp">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textView3"
+        android:text="Morada: "
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginRight="8dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/morada"
+        android:text="---"
+        android:layout_weight="1"
+        android:textSize="18dp"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="50dp">
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textView4"
+        android:text="Telefone: "
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginRight="8dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/tel"
+        android:text="987 65 43"
+        android:layout_weight="1"
+        android:textSize="18dp"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="50dp">
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textView6"
+        android:text="Username: "
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginRight="8dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/username"
+        android:text="---"
+        android:layout_weight="1"
+        android:textSize="18dp"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="50dp">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/textView7"
+        android:text="Senha: "
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginRight="8dp"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/senha"
+        android:text="-------"
+        android:layout_weight="1"
+        android:inputType="textWebPassword"
+        android:textSize="18dp"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/alterar"
+        android:text="Alterar Senha"
+        android:background="@color/orange"
+        android:layout_weight="1"/>
+
+</LinearLayout>
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
